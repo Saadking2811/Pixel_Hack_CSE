@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add a favicon  -->
+    <title>PixelHack</title>
+    <!-- Css Link -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- Pixelify Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  </head>
+  <body>
+    <!-- Might use this to add the lines in the background as SVGs-->
+    <div class="svg-container"></div>
 
+    <!-- navbar -->
+    <div class="container">
+      <nav class="navbar hide">
+        <div class="logo">PH</div>
+        <ul class="nav-links">
+          <li><a href="#Hero">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#">Workshop</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="register-btn">Register Now</button>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <div id="Hero">
+      <div class="Hero-img">
+        <img src="Assets/first_page.png" alt="Pixel Hack" />
+        <div class="cloud cloud1">
+          <img src="Assets/cloud.png" alt="Cloud 1" />
+        </div>
+        <div class="cloud cloud2">
+          <img src="Assets/cloud.png" alt="Cloud 2" />
+        </div>
+        <div class="cloud cloud3">
+          <img src="Assets/cloud.png" alt="Cloud 3" />
+        </div>
+        <div class="grasses">
+          <img src="Assets/grasses.png" alt="Cloud 3" />
+        </div>
+        <button class="Hero-btn">
+          Click Here To Register Now
+          <img src="Assets/link.png" width="30px" alt="link" />
+        </button>
+      </div>
+      <div class="coins coins1">
+        <img src="Assets/coin_afterdelay.png" alt="Coins" />
+      </div>
+    </div>
+
+    <!-- info -->
+    <div class="info">
+      <div class="title">About Pixel Hack</div>
+      <div class="Overview info-container">
+        <div class="info-title">Overview</div>
+        <img src="Assets/mario.png" alt="" />
+        <img class="info-icon" src="Assets/Subtract.png" alt="Subtract" />
+        <div class="info-text">
+          The CSE PIXEL HACK is an exciting competition where participants can
+          express their creativity and coding skills by designing video games or
+          simulations. The theme for this event could be something inspiring,
+          such as "eco-friendly cities" or "space exploration." The Game Jam
+          aims to bring together students with a shared passion for game
+          development and innovation
+        </div>
+      </div>
+      <div class="Workshops info-container">
+        <div class="info-title">Workshops</div>
+        <img src="Assets/mario.png" />
+        <img class="info-icon" src="Assets/Check_fill.png" alt="Check" />
+        <div class="info-text">
+          To help participants succeed, we will host workshops and mentorship
+          sessions led by experienced game developers. These will cover the
+          basics of game development, platform-specific tips, and best
+          practices.
+        </div>
+      </div>
+      <div class="Event-Format info-container">
+        <img src="Assets/mario.png" />
+        <div class="info-title">Event-Format</div>
+        <img class="info-icon" src="Assets/Chat.png" alt="" />
+        <div class="info-text">
+          - Teams will be given the theme at the start of the event.
+          <br />
+          - Each team will have a set amount of time (e.g., 24-48 hours) to
+          conceptualize, design, and develop their game.
+          <br />
+          - Judges will evaluate the games based on creativity, functionality,
+          and alignment with the theme.
+        </div>
+      </div>
+      <div class="Goals info-container">
+        <img src="Assets/mario.png" />
+        <div class="info-title">Goals</div>
+        <img class="info-icon" src="Assets/Desk.png" alt="" />
+        <div class="info-text">
+          Participants will create simple, engaging games or simulations based
+          on a specific theme. This event encourages creativity, teamwork, and
+          problem-solving skills as teams work to develop games from scratch
+          within a limited time frame.
+        </div>
+      </div>
+      <!--Partners-->
+      <div id="partners">
+        <div class="partners-title">our partners</div>
+        <div class="flex-container">
+          <div class="partners-container"></div>
+          <div class="partners-container"></div>
+          <div class="partners-container"></div>
+          <div class="partners-container"></div>
+          <div class="partners-container"></div>
+        </div>
+      </div>
+      <div class="coins coins2">
+        <img src="Assets/coin_afterdelay.png" alt="" />
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+      <div class="contact">
+        FOR FURTHER QUESTIONS <br />
+        CONTACT US
+        <br />
+        By email cse@esi.dz or by Social media
+      </div>
+    </footer>
+    <!-- JS -->
+    <script src="main.js" type="text/javascript"></script>
+  </body>
+</html>
