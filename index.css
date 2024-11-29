@@ -313,7 +313,7 @@ footer {
 }
 /*media query for large screens*/
 /*still needs work*/
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   /*navbar*/
   .navbar {
     width: 75%;
@@ -391,7 +391,7 @@ footer {
   }
 }
 /*media query for smaller screens*/
-@media (max-width: 814px) {
+@media (max-width: 768px) {
   /*used to hide the navbar*/
   .hide {
     display: none;
