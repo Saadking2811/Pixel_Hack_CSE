@@ -203,9 +203,12 @@ body {
   -webkit-text-stroke: 2px var(--color-black);
   font-weight: 700;
   padding-bottom: 40px;
-  text-shadow: 1px 1px 3px var(--color-black);
+  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000,
+    1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
 }
 .info-text {
+  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000,
+    1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
   padding: 20px;
 }
 .info-container {
@@ -233,7 +236,8 @@ body {
   place-items: center;
   margin: auto;
   color: var(--color-white);
-  -webkit-text-stroke: 1px var(--color-black);
+  text-shadow: -2px -2px 0 #000, 0 -2px 0 #000, 2px -2px 0 #000, 2px 0 0 #000,
+    2px 2px 0 #000, 0 2px 0 #000, -2px 2px 0 #000, -2px 0 0 #000;
   font-weight: 700;
 }
 /*The mario icon*/
@@ -256,7 +260,8 @@ body {
 }
 .partners-title {
   color: var(--color-white);
-  -webkit-text-stroke: 1px #000000;
+  text-shadow: -2px -2px 0 #000, 0 -2px 0 #000, 2px -2px 0 #000, 2px 0 0 #000,
+    2px 2px 0 #000, 0 2px 0 #000, -2px 2px 0 #000, -1px 0 0 #000;
   box-shadow: var(--box-shadow);
   font-weight: 700;
   font-size: var(--partners-titles);
@@ -294,10 +299,11 @@ body {
 
 /*footer*/
 footer {
-  height: 150px;
+  height: fit-content;
   background-color: var(--primary-color);
   border: 5px solid var(--color-border);
   margin-top: 50px;
+  position: relative;
 }
 .coins2 {
   transform: scaleX(-1);
@@ -310,7 +316,32 @@ footer {
   text-align: center;
   padding-top: 10px;
   font-weight: 700;
+  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000,
+    1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
 }
+.menu {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.mario-footer {
+  position: absolute;
+  bottom: 0;
+  width: 20.5vw;
+  right: -0.3%;
+}
+.social-media img {
+  width: 3%;
+}
+.social-media {
+  margin-right: 20%;
+  display: flex;
+  padding-block: 2%;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
 /*media query for large screens*/
 /*still needs work*/
 @media (min-width: 1024px) {
@@ -357,7 +388,8 @@ footer {
   /*info*/
   .info-title {
     font-size: 32px;
-    text-shadow: 2px #000000;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
   }
   .info-container {
     max-width: 50%;
@@ -389,10 +421,22 @@ footer {
   .partners-container:nth-child(5) {
     margin-right: calc(10%);
   }
+  /*footer*/
+  footer {
+    height: 12.5vw;
+    margin-top: 150px;
+  }
+  .mario-footer {
+    width: 19.5%;
+  }
 }
 /*media query for smaller screens*/
 @media (max-width: 768px) {
-  /*used to hide the navbar*/
+  /**/
+  .menu {
+    display: block;
+    width: 19.5vw;
+  }
   .hide {
     display: none;
   }
@@ -409,15 +453,16 @@ footer {
     padding: 2px 20px;
     font-size: 12px;
   }
-  .partners-container:nth-child(4) {
-    margin-left: 20px;
-  }
 
-  .partners-container:nth-child(5) {
-    margin-right: 20px;
-  }
   .info-container {
     font-size: 17px;
+  }
+  .flex-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #partners {
+    padding: 70px 0px;
   }
 }
 /*keyframe animations*/
