@@ -388,8 +388,6 @@ footer {
   /*info*/
   .info-title {
     font-size: 32px;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-      1px 1px 0 #000;
   }
   .info-container {
     max-width: 50%;
