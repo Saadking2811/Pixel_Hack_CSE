@@ -17,8 +17,8 @@ Defining the media queries
 
   --font-family: "Pixelify Sans", sans-serif;
 
-  --button-font-size: 12px;
-  --title-font-size: 36px;
+  --button-font-size: 13px;
+  --title-font-size: 31px;
   --text-font-size: 18px;
   --info-titles-font-size: 27px;
   --nav-font-size: 18px;
@@ -83,7 +83,7 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  padding: 20px 20px 35px;
+  padding: 0px 10px 25px;
 }
 
 /*NavBar elements*/
@@ -175,6 +175,7 @@ body {
 
 .Hero-btn {
   position: absolute;
+  z-index: 0;
   top: 34%;
   padding: 5px 20px;
   white-space: nowrap;
@@ -188,6 +189,7 @@ body {
   gap: 10px;
   font-size: var(--button-font-size);
   box-shadow: var(--box-shadow);
+  letter-spacing: 0.1rem;
 }
 .coins img {
   padding-block: 12px;
@@ -201,15 +203,54 @@ body {
   padding-top: 20px;
 }
 .container {
-  margin: 20px;
+  margin: 15px;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #bd6dff;
+  }
+}
+.floating {
+  animation: floating 2.5s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .title {
   font-size: var(--title-font-size);
   color: var(--color-white);
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
 
+  letter-spacing: 0.15em;
+  animation: typing 4.5s steps(32, end), blink-caret 0.75s step-end infinite;
   font-weight: 700;
-  padding-bottom: 40px;
+  margin-bottom: 25px;
   text-shadow: -2px -2px 0 #000, 0 -2px 0 #000, 2px -2px 0 #000, 2px 0 0 #000,
     2px 2px 0 #000, 0 2px 0 #000, -2px 2px 0 #000, -2px 0 0 #000;
 }
@@ -217,6 +258,70 @@ body {
   text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000,
     1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
   padding: 20px;
+  font-size: 20px;
+}
+.Hero-btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+
+  position: absolute;
+
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(4px);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  animation: glowing 20s linear infinite;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 30px;
+}
+
+.Hero-btn:active {
+  color: var(--button-color);
+}
+
+.Hero-btn:active:after {
+  background: transparent;
+}
+
+.Hero-btn:hover:before {
+  opacity: 1;
+}
+
+.Hero-btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--button-color);
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 .info-container {
   background-color: var(--primary-color);
@@ -234,38 +339,6 @@ body {
   text-align: center;
   box-shadow: var(--box-shadow);
 }
-/*@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-.info-container ::after,
-.info-container ::before {
-  content: " ";
-  position: absolute;
-  height: 102%;
-  width: 102%;
-  background: conic-gradient(from var(--angle), #14032b, transparent 75%);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  padding: 50px;
-  border-radius: 20px;
-  animation: 3s spin linear infinite;
-  z-index: -999;
-}
-.info-container::before {
-  filter: blur(1.5rem);
-  opacity: 0.5s;
-}
-@keyframes spin {
-  from {
-    --angle: 0deg;
-  }
-  to {
-    --angle: 360deg;
-  }
-}*/
 
 .Event-Format {
   text-align: left;
@@ -345,10 +418,7 @@ footer {
   position: relative;
   padding: 10px;
 }
-.coins2 {
-  transform: scaleX(-1);
-  margin-left: auto;
-}
+
 .contact {
   color: var(--color-white);
   display: grid;
@@ -357,8 +427,8 @@ footer {
   text-align: center;
   padding-top: 10px;
   font-weight: 700;
-  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000,
-    1px 1px 0 #000, 0 1px 0 #fe3434, -1px 1px 0 #000, -1px 0 0 #000;
+  text-shadow: -2px -2px 0 #000, 0 -2px 0 #000, 2px -2px 0 #000, 2px 0 0 #000,
+    1px 2px 0 #000, 0 2px 0 #fe3434, -2px 1px 0 #000, -1px 0 0 #000;
 }
 .menu {
   display: none;
@@ -372,6 +442,7 @@ footer {
 }
 .social-media img {
   width: 3%;
+  cursor: pointer;
 }
 .social-media {
   margin-right: 20%;
@@ -429,9 +500,7 @@ footer {
   .title {
     font-size: 40px;
   }
-  .Hero-btn {
-    padding: 5px 30px;
-  }
+
   /*info*/
   .info-title {
     font-size: 32px;
@@ -491,6 +560,11 @@ footer {
     display: block;
     position: absolute;
   }
+  .Hero-btn {
+    width: auto;
+    flex-wrap: wrap;
+    top: 32%;
+  }
   .close {
     width: 40px;
     display: block;
@@ -503,7 +577,7 @@ footer {
     width: 20px;
   }
   footer {
-    margin-top: 10px;
+    margin-top: 40px;
   }
   .social-media {
     margin: 0;
@@ -511,9 +585,7 @@ footer {
   .mario-footer {
     display: none;
   }
-  /*.hide {
-    display: none;
-  }*/
+
   .navbar {
     flex-direction: column;
     height: auto;
@@ -594,8 +666,8 @@ footer {
   .Hero-btn {
     width: 50%;
     padding: 5px 40px;
-    top: 30%;
-    font-size: 3.1vw;
+    top: 20%;
+    font-size: 2.8vw;
   }
   .info-container img:first-of-type {
     width: 10vw;

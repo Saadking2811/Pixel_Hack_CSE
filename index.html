@@ -16,6 +16,11 @@
     />
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="Assets/browser-img.png"
+    />
   </head>
   <body>
     <!-- navbar -->
@@ -24,11 +29,11 @@
         <div class="logo">PH</div>
         <ul class="nav-links">
           <li><a href="#Hero">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#Overview">About</a></li>
+
+          <li><a href="#Workshops">Workshop</a></li>
           <li><a href="#partners">Partners</a></li>
-          <li><a href="#">Workshop</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#Contact">Contact</a></li>
         </ul>
         <img class="close" src="Assets/x.png" alt="" />
         <button class="register-btn">Register Now</button>
@@ -53,20 +58,21 @@
         <div class="grasses">
           <img src="Assets/grasses.png" alt="Cloud 3" />
         </div>
+
         <button class="Hero-btn">
           Click Here To Register Now
           <img src="Assets/link.png" width="30px" alt="link" />
         </button>
       </div>
-      <div class="coins coins1">
+      <div class="coins coins1 floating">
         <img src="Assets/coin_afterdelay.png" alt="Coins" />
       </div>
     </div>
 
     <!-- info -->
     <div class="info">
-      <div class="title">About Pixel Hack</div>
-      <div class="Overview info-container">
+      <div class="title typing">About Pixel Hack</div>
+      <div id="Overview" class="info-container">
         <div class="info-title">Overview</div>
         <img src="Assets/mario.png" alt="" />
         <img class="info-icon" src="Assets/Subtract.png" alt="Subtract" />
@@ -79,7 +85,8 @@
           development and innovation
         </div>
       </div>
-      <div class="Workshops info-container">
+
+      <div id="Workshops" class="info-container">
         <div class="info-title">Workshops</div>
         <img src="Assets/mario.png" />
         <img class="info-icon" src="Assets/Check_fill.png" alt="Check" />
@@ -115,6 +122,7 @@
           within a limited time frame.
         </div>
       </div>
+
       <!--Partners-->
       <div id="partners">
         <div class="partners-title">our partners</div>
@@ -130,7 +138,7 @@
 
     <!--Footer-->
     <footer>
-      <div class="contact">
+      <div id="Contact" class="contact">
         FOR FURTHER QUESTIONS <br />
         CONTACT US
         <br />
