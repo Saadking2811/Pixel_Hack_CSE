@@ -110,7 +110,9 @@ body {
   display: flex;
   gap: clamp(20px, 2vw, 40px);
 }
-
+.link {
+  border-radius: 7px;
+}
 .nav-links li a {
   font-size: clamp(15px, 3vw, var(--nav-font-size));
   color: var(--color-white);
