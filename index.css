@@ -14,7 +14,18 @@ Defining the media queries
   --color-black: #191919;
   --color-white: #ffffff;
   --color-border: #2d0c57;
-
+  --gradient: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
   --font-family: "Pixelify Sans", sans-serif;
 
   --button-font-size: 13px;
@@ -205,39 +216,9 @@ body {
 .container {
   margin: 15px;
 }
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 30%;
-  }
-}
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #bd6dff;
-  }
-}
 .floating {
   animation: floating 2.5s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .title {
@@ -312,17 +293,6 @@ body {
   border-radius: 30px;
 }
 
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
 .info-container {
   background-color: var(--primary-color);
   padding: 16px;
@@ -460,8 +430,13 @@ footer {
   right: -0.3%;
   z-index: -2;
 }
-/*media query for large screens*/
-/*still needs work*/
+.video {
+  width: 50%;
+  margin-block: 2rem;
+  height: 28.125vw;
+  border-radius: 30px;
+  border: 5px solid var(--primary-color);
+}
 @media (min-width: 1024px) {
   /*navbar*/
   .navbar {
@@ -553,7 +528,7 @@ footer {
     display: flex;
     justify-content: flex-end;
     margin: 20px;
-    padding: 0 0 30px 20px;
+    padding: 0 0 40px 30px;
   }
   .menu {
     width: 40px;
@@ -586,19 +561,28 @@ footer {
     display: none;
   }
 
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    position: fixed;
-    z-index: 111;
-    top: 0;
-    transition: 0.4s;
-    left: 0;
-    justify-content: center;
-    border-radius: 0 0 30px 30px;
-    width: 100%;
-    transform: translateY(-150%);
+  @media (max-width: 768px) {
+    .navbar {
+      display: none;
+      flex-direction: column;
+      height: auto;
+      position: fixed;
+      z-index: 111;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      border-radius: 0 0 30px 30px;
+      width: 100%;
+      transform: translateY(-150%);
+      transition: 0.4s;
+    }
+
+    .active {
+      display: block;
+      transform: translateY(0%);
+    }
   }
+
   .active {
     transform: translateY(0%);
   }
@@ -627,7 +611,7 @@ footer {
     width: 5%;
   }
   .info-container {
-    width: 75%;
+    width: 85%;
   }
   .Hero-btn {
     width: 45%;
@@ -644,11 +628,16 @@ footer {
   #partners {
     padding: 70px 0px;
   }
+  .video {
+    width: 70%;
+    height: 39.375vw;
+  }
 }
 /*Mobile*/
 @media (max-width: 480px) {
   .info-container {
     width: 90%;
+
     font-size: 3.7vw;
     max-height: 400px;
     padding-top: 30px;
@@ -659,6 +648,9 @@ footer {
   .title {
     padding: 0;
     font-size: 25px;
+  }
+  .info-text {
+    font-size: 16px;
   }
   .flex-container {
     gap: 0;
@@ -674,6 +666,10 @@ footer {
     top: -7%;
     left: 45%;
   }
+  .Hero-btn {
+    padding: 0px;
+    font-size: 12px;
+  }
   #partners {
     padding: 2px 0;
   }
@@ -685,6 +681,9 @@ footer {
     width: 100px;
     margin: 7px;
   }
+  .flex-container {
+    gap: 5px;
+  }
   .partners-container:nth-child(5) {
     margin-right: 20px;
   }
@@ -692,7 +691,48 @@ footer {
     font-size: 16px;
   }
   footer {
-    margin-top: 20px;
+    margin-top: 150px;
   }
 }
 /*keyframe animations*/
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #bd6dff;
+  }
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
