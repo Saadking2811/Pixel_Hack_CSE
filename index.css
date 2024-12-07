@@ -543,15 +543,15 @@ footer {
   }
   .Hero-btn {
     width: auto;
-    flex-wrap: wrap;
+
     top: 32%;
   }
   .close {
     width: 40px;
     display: block;
     position: absolute;
-    top: 12%;
-    right: 7%;
+    top: 8%;
+    right: 3%;
     cursor: pointer;
   }
   .menu img {
@@ -662,10 +662,13 @@ footer {
     gap: 0;
   }
   .Hero-btn {
-    width: 50%;
+    width: 55%;
     padding: 5px 40px;
-    top: 20%;
-    font-size: 2.8vw;
+    left: 30%;
+    letter-spacing: normal;
+  }
+  .link {
+    width: 6vw;
   }
   .info-container img:first-of-type {
     width: 10vw;
@@ -743,19 +746,18 @@ footer {
   }
 }
 
-
 /*  scroll bar     */
-::-webkit-scrollbar{
-  width: 10px; 
-  min-height: 24px; 
-  max-height: 24px; 
+::-webkit-scrollbar {
+  width: 10px;
+  min-height: 24px;
+  max-height: 24px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background-color: var(--secondary-color);
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
   border: 1px solid var(--color-border);
   border-radius: 24px;
